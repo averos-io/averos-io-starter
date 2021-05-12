@@ -310,7 +310,7 @@ In order to enable the `cairo` font update **index.html** by adding the followin
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 ```  
 
-Similarely, a LOADING indicator could be added to the `app-root` as shown below:
+Similarly, a LOADING indicator could be added to the `app-root` as shown below:
 
 ```html
 <app-root>
