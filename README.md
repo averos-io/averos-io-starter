@@ -20,7 +20,7 @@ Averos framework web application starter
 - efficient time to market (TTM) control
 - microservice architecture
 - build scalable application
-- leverage an intuitive user interface design powered by angular material, html4 and CSS
+- leverage an intuitive user interface design powered by angular material, html5 and CSS
 - and much more...
 
 # Creating your first application
