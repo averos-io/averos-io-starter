@@ -27,7 +27,7 @@
     "@ngrx/router-store": "^12.1.0",
     "@ngrx/store": "^12.1.0",
     "@ngrx/store-devtools": "^12.1.0",
-    "@wiforge/averos": "^1.1.2",
+    "@wiforge/averos": "^1.1.4",
     "file-saver": "^2.0.5",
     "rxjs": "~6.6.7",
     "tslib": "^2.0.0",
