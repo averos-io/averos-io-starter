@@ -97,6 +97,7 @@
     "app.ok": "D'accord",
     "app.continue": "Continuer",
     "app.reset": "Réinitialiser",
+    "app.back": "Retour",
     "app.filter": "Filter la recherche",
     "app.settings": "Paramètres",
     "app.overview": "Aperçu Général",
@@ -116,6 +117,17 @@
     "app.phone.maxlenght": "13",
     "app.phone.maxlenght.hint": "{$INTERPOLATION} / 13",
     "app.phone.maxlenght.error": "La longueur du numéro de téléphone doit être de {$START_TAG_STRONG}13 chiffres{$CLOSE_TAG_STRONG}",
+
+    "app.component.operation.equal": "Egal à",
+    "app.component.operation.notequal": "Non Egal à",
+    "app.component.operation.greaterthan": "Supérieur à",
+    "app.component.operation.greaterthanorequal": "Supèrieur ou égal à",
+    "app.component.operation.lessthan": "Inférieur à",
+    "app.component.operation.lessthanorequal": "Inférieur ou égal à",
+    "app.component.operation.like": "Ressemble à ",
+    "app.component.operation.notlike": "Ne ressemble pas à ",
+    "app.component.operation.in": "Contient la liste",
+    "app.component.operation.notin": "Ne contient pas",
 
     "menu.dashboard": "Tableau de bord",
     "menu.dashboard.label": "nouveau",
@@ -142,6 +154,7 @@
 
     "uc.create.entity": "L'Entité {$entity} a été créée avec succès",
     "uc.update.entity": "La mise à jour de l'entité {$entity} a été effectuée avec succès",
+    "uc.update.entity.error": "Une erreur s'est produite lors de la mise à jour de l'entité {$entity}",
     "uc.delete.entity": "L'entité {$entity} a été supprimée avec succès",
     "uc.modification.entity": "Opération effectuée avec succès!",
 

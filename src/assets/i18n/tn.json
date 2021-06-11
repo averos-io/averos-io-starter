@@ -66,7 +66,7 @@
     "user.profileLanguage": "اللغة",
     "user.loginInformations": "معلومات تسجيل الدخول",
     "user.group.otherinformation": "معلومات إضافية",
-    "user.createdBy": "الخالق",
+    "user.createdBy": "بيانات الصانع",
     "user.updatedBy": "المحدث",
 
     "user.email.validation.required": "الرجاء إدخال البريد الالكتروني",
@@ -97,6 +97,7 @@
     "app.ok": "موافق",
     "app.continue": "إستمرار",
     "app.reset": "إعادة تعيين",
+    "app.back": "عودة",
     "app.filter": "تصفية نتائج البحث",
     "app.settings": "الإعدادات",
     "app.overview": "نظرة عامة",
@@ -116,6 +117,17 @@
     "app.phone.maxlenght": "8",
     "app.phone.maxlenght.hint": "{$INTERPOLATION} / 8",
     "app.phone.maxlenght.error": "يجب أن يكون طول رقم الهاتف 8 أرقام",
+
+    "app.component.operation.equal": "يساوي",
+    "app.component.operation.notequal": "لا يساوي",
+    "app.component.operation.greaterthan": "أكبر من",
+    "app.component.operation.greaterthanorequal": "أكبر أو يساوي",
+    "app.component.operation.lessthan": "أصغر من",
+    "app.component.operation.lessthanorequal": "أصغر أو يساوي",
+    "app.component.operation.like": "يشبه",
+    "app.component.operation.notlike": "لايشبه",
+    "app.component.operation.in": "يحتوي على",
+    "app.component.operation.notin": "لا يحتوي على",
 
     "menu.dashboard": "لوحة القيادة",
     "menu.dashboard.label": "جديد",
@@ -143,6 +155,7 @@
 
     "uc.create.entity": "تم إنشاء المعطى بنجاح",
     "uc.update.entity": "تم تحديث المعطى بنجاح",
+    "uc.update.entity.error": "Error occured while updating Entity {$entity}",
     "uc.delete.entity": "تم حذف البيانات بنجاح",
     "uc.modification.entity": "!تم التعديل بنجاح",
 
@@ -169,7 +182,7 @@
 
     "uc.search.role.title":"Search Roles",
     "uc.search.role.label":"Search Filter",
-    
+
     "error.serviceUnreachable": "لا يمكن الوصول إلى الخدمة عن بُعد في الوقت الحالي"
 
   }

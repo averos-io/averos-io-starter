@@ -97,6 +97,7 @@
     "app.ok": "Ok",
     "app.continue": "Continue",
     "app.reset": "Reset",
+    "app.back": "Back",
     "app.filter": "Search Filter",
     "app.settings": "settings",
     "app.overview": "Overview",
@@ -116,6 +117,17 @@
     "app.phone.maxlenght": "13",
     "app.phone.maxlenght.hint": "{$INTERPOLATION} / 13",
     "app.phone.maxlenght.error": "Phone number lenght should be {$START_TAG_STRONG}13 digits{$CLOSE_TAG_STRONG}",
+
+    "app.component.operation.equal": "Equal",
+    "app.component.operation.notequal": "Not Equal",
+    "app.component.operation.greaterthan": "Greater",
+    "app.component.operation.greaterthanorequal": "Greater Or Equal",
+    "app.component.operation.lessthan": "Less Than",
+    "app.component.operation.lessthanorequal": "Less or equal",
+    "app.component.operation.like": "Like",
+    "app.component.operation.notlike": "Not Like",
+    "app.component.operation.in": "Values IN",
+    "app.component.operation.notin": "Not IN",
 
     "menu.dashboard": "Dashboard",
     "menu.dashboard.label": "new",
@@ -143,6 +155,7 @@
 
     "uc.create.entity": "Entity {$entity} has been created successfully",
     "uc.update.entity": "Entity {$entity} has been updated successfully",
+    "uc.update.entity.error": "Error occured while updating Entity {$entity}",
     "uc.delete.entity": "Entity {$entity} has been updated successfully",
     "uc.modification.entity": "Done successfully!",
 
@@ -171,6 +184,5 @@
     "uc.search.role.label":"Search Filter",
 
     "error.serviceUnreachable": "Failed to load resources! the requested service is unreachable"
-
 
   }

@@ -98,6 +98,7 @@
     "app.ok": "Ok",
     "app.continue": "Weiter",
     "app.reset": "Zurücksetzen",
+    "app.back": "Zurück",
     "app.filter": "Filtersuche",
     "app.settings": "Einstellungen",
     "app.overview": "Überblick",
@@ -117,6 +118,17 @@
     "app.phone.maxlenght": "13",
     "app.phone.maxlenght.hint": "{$INTERPOLATION} / 13",
     "app.phone.maxlenght.error": "Die Länge der Telefonnummer sollte {$START_TAG_STRONG}13-stellig {$CLOSE_TAG_STRONG} sein",
+
+    "app.component.operation.equal": "Gleich",
+    "app.component.operation.notequal": "Nicht gleich",
+    "app.component.operation.greaterthan": "Größer als ",
+    "app.component.operation.greaterthanorequal": "Größer oder gleich",
+    "app.component.operation.lessthan": "Weniger als",
+    "app.component.operation.lessthanorequal": "Weniger oder gleich",
+    "app.component.operation.like": "Sieht aus wie",
+    "app.component.operation.notlike": "Schaut nicht so aus",
+    "app.component.operation.in": "Werte in",
+    "app.component.operation.notin": "Werte nicht in",
 
     "menu.dashboard": "Instrumententafel",
     "menu.dashboard.label": "neu",
@@ -144,6 +156,7 @@
 
     "uc.create.entity": "Entität {$entity} wurde erfolgreich erstellt",
     "uc.update.entity": "Entität {$entity} wurde erfolgreich aktualisiert",
+    "uc.update.entity.error": "Error occured wile updating Entity {$entity}",
     "uc.delete.entity": "Entität {$entity} wurde erfolgreich gelöscht",
     "uc.modification.entity": "Operation erfolgreich ausgeführt!",
 
