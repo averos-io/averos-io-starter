@@ -76,6 +76,8 @@
 		]
 		
 	},
+	"selectableInputTableUCViewLayout": {
+	},
 	"viewUCViewLayout": {
 		"orderedView": true,
 		"title": "View Role",

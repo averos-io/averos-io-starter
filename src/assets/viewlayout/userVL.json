@@ -281,6 +281,20 @@
 		]
 		
 	},
+	"selectableInputTableUCViewLayout": {
+		"orderedView": false,
+		"title": "Users Search Result",
+		"titleTranslationID": "app.search.result",
+		"ucViewLayout": [
+			{
+				"entityFieldName": "userName",
+				"label": "UserName",
+				"labelTranslationID": "user.userName",
+				"visible": true,
+				"order": 1
+			}
+		]
+	},
 	"viewUCViewLayout": {
 		"orderedView": true,
 		"title": "View User",
