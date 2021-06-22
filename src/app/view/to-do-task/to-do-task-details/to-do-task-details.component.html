@@ -1,0 +1,18 @@
+<div *ngIf="useCaseEntity" [@slideInOutAnimation]>
+    <button color="accent" mat-button (click)="getBack()">
+       <mat-icon> arrow_back_ios_new </mat-icon>
+       {{'Back' | translate:'app.back'}}
+    </button>
+    <averos-view-edit-entity  *ngIf="reactiveForm" 
+                              [useCaseConfig]="useCaseConfig"
+                              [entityUseCaseViewLayout$]="useCaseViewLayout"
+                              [reactiveForm]="reactiveForm"
+                              [editModeActivated]="editModeActivated"
+                              [displayActions]="true"
+                              (submitForm)="onSubmit($event)"
+                              (updateEditMode)="updateEditMode($event)"
+                              (cloneEvent)="clone()"
+                              (editEvent)="edit()">
+    </averos-view-edit-entity>
+ 
+ </div>

@@ -3,16 +3,16 @@
 	},
 	"searchInputUCViewLayout": {
 			"orderedView": true,
-			"title": "Roles Search Input",
-			"titleTranslationID": "uc.search.role.title",
+			"title": "Search Task",
+			"titleTranslationID": "uc.search.todotask.title",
 			"parentEntityLabel": "Search Criteria",
-			"parentEntityLabelTranslationId": "uc.search.role.label",
+			"parentEntityLabelTranslationId": "uc.search.todotask.label",
 			"iconOrientation": "SUFFIX",
 			"ucViewLayout": [
 			{
 				"entityFieldName": "name",
 				"label": "name",
-				"labelTranslationID": "toDoTask.name",
+				"labelTranslationID": "todotask.name",
 				"visible": true,
 				"order": 1,
 				"fieldGroup": {
@@ -23,11 +23,38 @@
 			{
 				"entityFieldName": "description",
 				"label": "description",
-				"labelTranslationID": "toDoTask.description",
+				"labelTranslationID": "todotask.description",
 				"visible": true,
 				"order": 2,
 				"fieldGroup": {
 					"groupId": 1,
+					"groupOrder": 1
+				}
+			},
+			{
+				"entityFieldName": "status",
+				"visible": true,
+				"label": "Status",
+				"labelTranslationID": "todotask.status",
+				"placeholder": "",
+				"placeholderTranslationID": null,
+				"type": "combo",
+				"icon": "assignment",
+				"required": false,
+				"targetFieldDomain": 
+				[
+					{
+						"name": "Closed", 
+						"translationID": "todotask.status.CLOSED"
+					} , 
+					{
+						"name": "Active", 
+						"translationID": "todotask.status.ACTIVE"
+					}
+				],
+				"order": 3,
+				"fieldGroup": {
+					"groupId": "1",
 					"groupOrder": 1
 				}
 			}
@@ -42,26 +69,33 @@
 			{
 				"entityFieldName": "name",
 				"label": "name",
-				"labelTranslationID": "toDoTask.name",
+				"labelTranslationID": "todotask.name",
 				"visible": true,
 				"order": 1
 			},
 			{
-				"entityFieldName": "description",
-				"label": "description",
-				"labelTranslationID": "toDoTask.description",
+				"entityFieldName": "status",
+				"label": "Status",
+				"labelTranslationID": "todotask.status",
 				"visible": true,
 				"order": 2
 			},
 			{
+				"entityFieldName": "description",
+				"label": "description",
+				"labelTranslationID": "todotask.description",
+				"visible": true,
+				"order": 3
+			},
+			{
 				"entityFieldName": "createdBy",
 				"label": "createdBy",
-				"labelTranslationID": "toDoTask.createdBy",
+				"labelTranslationID": "todotask.createdBy",
 				"entityCompositeFieldName": "createdBy.userName",
 				"type": "composite",
 				"typeName": "User",
 				"visible": true,
-				"order": 3
+				"order": 4
 			},
 			{
 				"entityFieldName": "updatedBy",
@@ -71,26 +105,38 @@
 				"type": "composite",
 				"typeName": "User",
 				"visible": true,
-				"order": 4
+				"order": 5
 			}
 		]
 		
 	},
 	"selectableInputTableUCViewLayout": {
+		"orderedView": false,
+		"title": "ToDoTask Search Result",
+		"titleTranslationID": "app.search.result",
+		"ucViewLayout": [
+			{
+				"entityFieldName": "name",
+				"label": "Name",
+				"labelTranslationID": "todotask.name",
+				"visible": true,
+				"order": 1
+			}
+		]
 	},
 	"viewUCViewLayout": {
 		"orderedView": true,
 		"title": "View ToDoTask",
 		"titleTranslationID": "uc.view.toDoTask.title",
 		"parentEntityLabel": "ToDoTask Details",
-		"parentEntityLabelTranslationId": "uc.view.toDoTask.label",
+		"parentEntityLabelTranslationId": "uc.view.todotask.label",
 		"iconOrientation": "SUFFIX",
 		"ucViewLayout": [
 			{
 				"entityFieldName": "name",
 				"visible": true,
 				"label": "ToDoTask Name",
-				"labelTranslationID": "toDoTask.name",
+				"labelTranslationID": "todotask.name",
 				"placeholder": "",
 				"placeholderTranslationID": "",
 				"type": "string",
@@ -135,7 +181,18 @@
 					"groupOrder": 1
 				}
 			},
-						{
+			{
+				"entityFieldName": "status",
+				"label": "Status",
+				"labelTranslationID": "todotask.status",
+				"visible": true,
+				"order": 3,
+				"fieldGroup": {
+					"groupId": 2,
+					"groupOrder": 1
+				}
+			},
+			{
 				"entityFieldName": "createdBy",
 				"label": "createdBy",
 				"labelTranslationID": "user.createdBy",
@@ -157,16 +214,16 @@
 	"createUCViewLayout": {
 		"orderedView": true,
 		"title": "Create toDoTask",
-		"titleTranslationID": "uc.create.toDoTask.title",
+		"titleTranslationID": "uc.create.todotask.title",
 		"parentEntityLabel": "Role Details",
-		"parentEntityLabelTranslationId": "uc.create.toDoTask.label",
+		"parentEntityLabelTranslationId": "uc.create.todotask.label",
 		"iconOrientation": "SUFFIX",
 		"ucViewLayout": [
 			{
 				"entityFieldName": "name",
 				"visible": true,
 				"label": "ToDoTask Name",
-				"labelTranslationID": "toDoTask.name",
+				"labelTranslationID": "todotask.name",
 				"placeholder": "",
 				"placeholderTranslationID": "",
 				"type": "string",
@@ -197,7 +254,7 @@
 				"entityFieldName": "description",
 				"visible": true,
 				"label": "description",
-				"labelTranslationID": "toDoTask.description",
+				"labelTranslationID": "todotask.description",
 				"placeholder": "",
 				"placeholderTranslationID": "",
 				"type": "string",
@@ -206,6 +263,33 @@
 				"disabled": false,
 				"defaultValue": "",
 				"order": 2,
+				"fieldGroup": {
+					"groupId": "1",
+					"groupOrder": 1
+				}
+			},
+			{
+				"entityFieldName": "status",
+				"visible": true,
+				"label": "Status",
+				"labelTranslationID": "todotask.status",
+				"placeholder": "",
+				"placeholderTranslationID": null,
+				"type": "combo",
+				"icon": "assignment",
+				"required": false,
+				"targetFieldDomain": 
+				[
+					{
+						"name": "CLOSED", 
+						"translationID": "todotask.status.CLOSED"
+					} , 
+					{
+						"name": "ACTIVE", 
+						"translationID": "todotask.status.ACTIVE"
+					}
+				],
+				"order": 3,
 				"fieldGroup": {
 					"groupId": "1",
 					"groupOrder": 1
@@ -225,7 +309,7 @@
 					"entityFieldName": "name",
 					"visible": true,
 					"label": "ToDoTask Name",
-					"labelTranslationID": "toDoTask.name",
+					"labelTranslationID": "todotask.name",
 					"placeholder": "",
 					"placeholderTranslationID": "",
 					"type": "string",
@@ -256,7 +340,7 @@
 					"entityFieldName": "description",
 					"visible": true,
 					"label": "description",
-					"labelTranslationID": "toDoTask.description",
+					"labelTranslationID": "todotask.description",
 					"placeholder": "",
 					"placeholderTranslationID": "",
 					"type": "string",
@@ -265,6 +349,33 @@
 					"disabled": false,
 					"defaultValue": "",
 					"order": 2,
+					"fieldGroup": {
+						"groupId": "1",
+						"groupOrder": 1
+					}
+				},
+				{
+					"entityFieldName": "status",
+					"visible": true,
+					"label": "Status",
+					"labelTranslationID": "todotask.status",
+					"placeholder": "",
+					"placeholderTranslationID": null,
+					"type": "combo",
+					"icon": "assignment",
+					"required": false,
+					"targetFieldDomain": 
+					[
+						{
+							"name": "CLOSED", 
+							"translationID": "todotask.status.CLOSED"
+						} , 
+						{
+							"name": "ACTIVE", 
+							"translationID": "todotask.status.ACTIVE"
+						}
+					],
+					"order": 3,
 					"fieldGroup": {
 						"groupId": "1",
 						"groupOrder": 1

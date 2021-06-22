@@ -1,20 +1,19 @@
-
-import { AverosEntity, EntityViewLayout, 
-         getUseCaseViewLayout,
-         OneToOne, UseCase, User } from '@wiforge/averos';
-import { UseCaseViewLayout } from '@wiforge/averos/view/_models/entity-view-layout/use-case-view-layout';
+import { AverosEntity, EntityViewLayout, getUseCaseViewLayout, 
+         ID, OneToOne, UseCase, UseCaseViewLayout, User } from '@wiforge/averos';
 import { Observable } from 'rxjs';
+import { ToDoTaskService } from '../service/to-do-task.service';
 import { ToDoStatus } from './to-do-status';
 
 
-@AverosEntity(ToDoTask)
+@AverosEntity(ToDoTaskService)
 export class ToDoTask {
     public static entityViewLayout$: Observable<EntityViewLayout<ToDoTask>>;
     public static entityViewLayout : EntityViewLayout<ToDoTask>;
     public static entityName = 'ToDoTask';
     public static instanceMetadata = new ToDoTask();
 
-    _id: number;
+    @ID()
+    id: number;
     name: string;
     description: string;
     status: ToDoStatus;

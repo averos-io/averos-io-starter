@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { AlertService, CreateViewEditUseCase, EntityAlteredRelationEventData, FormControlService, UseCase, UseCaseConfig } from '@wiforge/averos';
-import { UseCaseViewLayout } from '@wiforge/averos/view/_models/entity-view-layout/use-case-view-layout';
+import { AlertService, CreateViewEditUseCase, EntityAlteredRelationEventData, 
+         FormControlService, UseCase, UseCaseConfig, UseCaseViewLayout } from '@wiforge/averos';
 import { Observable, Subscription } from 'rxjs';
-import { ToDoArea } from 'src/app/model/to-do-area';
-import { ToDoAreaService } from 'src/app/service/to-do-area.service';
+import { ToDoArea } from '../../../model/to-do-area';
+import { ToDoAreaService } from '../../../service/to-do-area.service';
+
 
 @Component({
   selector: 'app-create-to-do-area',
@@ -16,19 +16,20 @@ import { ToDoAreaService } from 'src/app/service/to-do-area.service';
 export class CreateToDoAreaComponent implements CreateViewEditUseCase<ToDoArea>, OnInit {
 
   useCaseViewLayout: Observable<UseCaseViewLayout<ToDoArea>> = null;
-  toDoArea =  new ToDoArea();
+  componentNewValue =  new ToDoArea();
   reactiveForm: FormGroup = null;
   useCaseConfig: UseCaseConfig<ToDoArea> = {
                                           componentAppearance: 'outline',
                                           iconLayout: 'component',
-                                          entity: this.toDoArea,
-                                          useCase: UseCase.VIEW
+                                          entity: this.componentNewValue,
+                                          entityType: ToDoArea,
+                                          useCase: UseCase.CREATE
                                        };
-  editModeActivated: boolean;// true for Create UseCases
+  editModeActivated = true;// true for Create UseCases
 
   userSubscription: Subscription;
 
-  constructor(private toDoAreaService: ToDoAreaService,
+  constructor(private entityService: ToDoAreaService,
               private alertService: AlertService,
               private formControlService: FormControlService) { }
   
@@ -52,17 +53,17 @@ export class CreateToDoAreaComponent implements CreateViewEditUseCase<ToDoArea>,
     this.useCaseViewLayout = ToDoArea.getUseCaseViewLayout(UseCase.CREATE);
     this.reactiveForm = this.formControlService.buildUseCaseFormFromEntityType(
       ToDoArea, UseCase.CREATE
-      );;
+      );
   }
 
-  onSubmit(toDoArea: ToDoArea){
-    this.toDoArea = toDoArea;
-    this.toDoAreaService.createToDoArea(this.toDoArea).subscribe(
-        (toDoArea: ToDoArea) => {
-          this.alertService.success($localize`:@@uc.create.entity:Area ${toDoArea.name}:entity:
+  onSubmit(submittedValue: ToDoArea){
+    this.componentNewValue = submittedValue;
+    this.entityService.createEntity(this.componentNewValue).subscribe(
+        (submittedEntity: ToDoArea) => {
+          this.alertService.success($localize`:@@uc.create.entity:Entity ${submittedEntity.name}:entity:
            has been created successfully`);
           this.editModeActivated = false;
-          this.reactiveForm.reset(this.toDoArea);
+          this.reactiveForm.reset(this.componentNewValue);
         },
         err => {
           console.log(err); 

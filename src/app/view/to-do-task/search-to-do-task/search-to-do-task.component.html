@@ -1,1 +1,27 @@
-<p>search-to-do-task works!</p>
+<averos-search-entity [useCaseConfig]="useCaseConfig"
+                        [entityUseCaseViewLayout$]="searchUseCaseViewLayout"
+                        [searchInputFormGoup]="searchInputFormGoup"
+                        (executeSearch)="searchEntities($event)"
+                        #averosSearchEntity>
+</averos-search-entity>
+
+  <averos-search-result *ngIf="showSearchResult"
+                        [searchCriteria]="searchCriteria"
+                        [data$]="tableValues$"
+                        [targetEntity]=""
+                        [showRowActions]="true"
+                        [showFilterComponent]="true"
+                        [filterComponentLabel]="'Search Filter'"
+                        [filterComponentLabelTranslationID]="'app.filter'"
+                        [filterKey]="'any key'"
+                        [viewLayout]="viewLayout"
+                        (viewObject)="view($event)"
+                        (viewCompositeObject)="viewCompositeObject($event)"
+                        (editObject)="edit($event)"
+                        (deleteObject)="delete($event)"
+                        (addObject)="add($event)"
+                        (reloadTable)="reloadData($event)"
+                        (search)="search($event)"
+                        #averosSearchResult>
+  </averos-search-result>
+

@@ -90,8 +90,8 @@
           "disabled": "false",
           "children": [
                 {
-                  "displayName": "Search Tasks",
-                  "translationID": "menu.todotask.search",
+                  "displayName": "Search Users",
+                  "translationID": "menu.users.search",
                   "iconName": "local_library",
                   "type": "link",
                   "route": "/todotask/search"

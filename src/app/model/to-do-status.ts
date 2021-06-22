@@ -1,4 +1,4 @@
 export enum ToDoStatus {
-    ACTIVE,
-    CLOSED
+    ACTIVE = "Active",
+    CLOSED = "Closed"
 }

@@ -1,25 +1,25 @@
-import { AverosEntity, EntityViewLayout, 
-         getUseCaseViewLayout, OneToMany, 
-         OneToOne, UseCase, User } from '@wiforge/averos';
-import { UseCaseViewLayout } from '@wiforge/averos/view/_models/entity-view-layout/use-case-view-layout';
+
+import { AverosEntity, EntityViewLayout, getUseCaseViewLayout,
+         ID, OneToMany, OneToOne, UseCase, UseCaseViewLayout, User } from '@wiforge/averos';
 import { Observable } from 'rxjs';
+import { ToDoAreaService } from '../service/to-do-area.service';
 import { ToDoTask } from './to-do-task';
 
-@AverosEntity(ToDoArea)
+@AverosEntity(ToDoAreaService)
 export class ToDoArea {
     public static entityViewLayout$: Observable<EntityViewLayout<ToDoArea>>;
     public static entityViewLayout : EntityViewLayout<ToDoArea>;
     public static entityName = 'ToDoArea';
     public static instanceMetadata = new ToDoArea();
 
-
-    _id: number;
+    @ID()
+    id: number;
     name: string;
     description: string;
  
 
     @OneToMany('ToDoTask', import('./to-do-task')) 
-    toDoTasks: ToDoTask[];
+    toDoTasks: [ToDoTask];
     @OneToOne('User', import('@wiforge/averos')) createdBy?: User;
     @OneToOne('User', import('@wiforge/averos')) updatedBy?: User;
 

@@ -11,6 +11,8 @@ import { CreateToDoAreaComponent } from './view/to-do-area/create-to-do-area/cre
 import { SearchToDoAreaComponent } from './view/to-do-area/search-to-do-area/search-to-do-area.component';
 import { CreateToDoTaskComponent } from './view/to-do-task/create-to-do-task/create-to-do-task.component';
 import { SearchToDoTaskComponent } from './view/to-do-task/search-to-do-task/search-to-do-task.component';
+import { ToDoAreaDetailsComponent } from './view/to-do-area/to-do-area-details/to-do-area-details.component';
+import { ToDoTaskDetailsComponent } from './view/to-do-task/to-do-task-details/to-do-task-details.component';
 
 // ******************* Custom application initializer loader ***/
 export function applicationInitializer(applicationInitializerService: ApplicationInitializerService): () => Promise<any> {
@@ -23,7 +25,9 @@ export function applicationInitializer(applicationInitializerService: Applicatio
     CreateToDoAreaComponent,
     SearchToDoAreaComponent,
     CreateToDoTaskComponent,
-    SearchToDoTaskComponent
+    SearchToDoTaskComponent,
+    ToDoAreaDetailsComponent,
+    ToDoTaskDetailsComponent
   ],
   imports: [
     AverosCoreModule.forRoot({beURL: 'http://localhost:3000'}),

@@ -4,7 +4,7 @@ Averos framework web application starter
 
 <br>
 
-![](https://img.shields.io/badge/AverosWebApplicationAtarter-v1.1.0-blue)
+![](https://img.shields.io/badge/AverosWebApplicationAtarter-v1.1.1-blue)
 ![](https://img.shields.io/badge/poweredby-averos-red)
 
 <br>
