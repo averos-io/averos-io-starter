@@ -11,7 +11,7 @@ Averos framework web application starter
 
 ## Framework Overview
 
-**Averos** framework is the ultimate [low-code](https://en.wikipedia.org/wiki/Low-code_development_platform), fully [responsive](https://en.wikipedia.org/wiki/Responsive_web_design) [Angular](https://angular.io/)-powered web application development framework that is aimed to simplify web application development while hiding complex technical aspects; providing a full control on [time to market (TTM)](https://en.wikipedia.org/wiki/Time_to_market). 
+**Averos** framework is the ultimate [Rapid](https://en.wikipedia.org/wiki/Rapid_application_development), fully [responsive](https://en.wikipedia.org/wiki/Responsive_web_design) [Angular](https://angular.io/)-powered web application development framework that is aimed to simplify web application development while hiding complex technical aspects; providing a full control on [time to market (TTM)](https://en.wikipedia.org/wiki/Time_to_market). 
 
 ## Features
 - create stunning responsive web application in a jeffy
