@@ -2,12 +2,21 @@
 ### _Only what matters the most_
 Averos framework web application starter
 
+<br/>
+<br/>
+
+<p align="center">
+<img width="400" height="350" src="https://www.wiforge.com/images/averos.svg">
+<br/> 
+<br/>
+
+  <img src="https://img.shields.io/badge/AverosIOStarter-v1.1.2-blue">
+    <img src="https://img.shields.io/badge/poweredby-averos-red">
+</p>
+
+<br/>
 <br>
 
-![](https://img.shields.io/badge/AverosWebApplicationAtarter-v1.1.1-blue)
-![](https://img.shields.io/badge/poweredby-averos-red)
-
-<br>
 
 ## Framework Overview
 
