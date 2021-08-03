@@ -6,7 +6,7 @@ Averos framework web application starter
 <br/>
 
 <p align="center">
-<img width="400" height="350" src="https://www.wiforge.com/images/averos.svg">
+<img width="400" height="350" src="https://www.wiforge.com/assets/logo/averos.svg">
 <br/> 
 <br/>
 
@@ -34,7 +34,7 @@ Averos framework web application starter
 
 # Creating your first application
 
-Please refer to [averos starter user guide](https://averos-io.github.io/averos-io-starter/) for further details.
+Please refer to [averos starter user guide](https://www.wiforge.com/) for further details.
 
 
 
