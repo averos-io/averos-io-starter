@@ -1,9 +1,11 @@
-import { AverosEntity, EntityViewLayout, getUseCaseViewLayout, 
-         ID, OneToOne, UseCase, UseCaseViewLayout, User } from '@wiforge/averos';
+
+import { AverosEntity, ID, getUseCaseViewLayout, 
+         EntityViewLayout, UseCase, UseCaseViewLayout, 
+         User, OneToOne, ManyToOne } from '@wiforge/averos';
 import { Observable } from 'rxjs';
 import { ToDoTaskService } from '../service/to-do-task.service';
-import { ToDoStatus } from './to-do-status';
-
+import { ToDoArea } from './to-do-area';
+import { TaskStatus } from './task-status';
 
 @AverosEntity(ToDoTaskService)
 export class ToDoTask {
@@ -12,15 +14,28 @@ export class ToDoTask {
     public static entityName = 'ToDoTask';
     public static instanceMetadata = new ToDoTask();
 
+    // Averos entity identifier is equal to 'id' by default
+    // please change the identifier at your convenience
     @ID()
-    id: number;
-    name: string;
-    description: string;
-    status: ToDoStatus;
+    id!: string;
+    name!: string;
+    description!: string;
+    createdAt!: Date;
+    updatedAt!: Date;
+    @OneToOne('User', import('@wiforge/averos'))createdBy!: User;
+    @OneToOne('User', import('@wiforge/averos'))updatedBy!: User;
+    @ManyToOne('ToDoArea', import('./to-do-area')) toDoArea!: ToDoArea;
+    taskStatus!: TaskStatus;
 
 
-    @OneToOne('User', import('@wiforge/averos')) createdBy?: User;
-    @OneToOne('User', import('@wiforge/averos')) updatedBy?: User;
+     
+     /**
+      * TODO: Add your custom entity members
+      *
+      */
+
+
+
 
     static getEntityViewLayout(): Observable<EntityViewLayout<ToDoTask>> {
         return ToDoTask.entityViewLayout$;

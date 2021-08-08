@@ -1,16 +1,25 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ToDoTaskService } from './to-do-task.service';
 
 describe('ToDoTaskService', () => {
-  let service: ToDoTaskService;
+  let component: ToDoTaskService;
+  let fixture: ComponentFixture<ToDoTaskService>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ToDoTaskService);
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ ToDoTaskService ]
+    })
+    .compileComponents();
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ToDoTaskService);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

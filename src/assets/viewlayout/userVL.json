@@ -1,6 +1,5 @@
 {
-	"defaultUCViewLayout": {
-	},
+	"defaultUCViewLayout": {},
 	"searchInputUCViewLayout": {
 		"orderedView": true,
 		"title": "Search Users",
@@ -20,8 +19,7 @@
 				"icon": "person",
 				"required": true,
 				"disabled": false,
-				"validators": {
-				},
+				"validators": {},
 				"defaultValue": "",
 				"order": 1,
 				"fieldGroup": {
@@ -200,15 +198,6 @@
 				"order": 2
 			},
 			{
-				"entityFieldName": "role",
-				"label": "role",
-				"labelTranslationID": "user.role",
-				"visible": true,
-				"required": false,
-				"type": "string",
-				"order": 2
-			},
-			{
 				"entityFieldName": "lastLoginIPAddress",
 				"label": "IP Address",
 				"labelTranslationID": "user.lastLoginIPAddress",
@@ -279,7 +268,6 @@
 				"order": 20
 			}
 		]
-		
 	},
 	"selectableInputTableUCViewLayout": {
 		"orderedView": false,
@@ -315,16 +303,15 @@
 				"required": true,
 				"disabled": true,
 				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "Please enter a username", 
-									"validationMessageTranslationID": ""
-								}
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "Please enter a username",
+							"validationMessageTranslationID": ""
+						}
 					]
 				},
 				"defaultValue": "",
@@ -363,16 +350,15 @@
 				"icon": "emoji_people",
 				"required": true,
 				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "a FirstName is required", 
-									"validationMessageTranslationID": ""
-								}
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "a FirstName is required",
+							"validationMessageTranslationID": ""
+						}
 					]
 				},
 				"order": 1,
@@ -392,16 +378,15 @@
 				"icon": "emoji_people",
 				"required": true,
 				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "a last name is required", 
-									"validationMessageTranslationID": ""
-								}
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "a last name is required",
+							"validationMessageTranslationID": ""
+						}
 					]
 				},
 				"order": 2,
@@ -421,16 +406,15 @@
 				"icon": "assignment",
 				"required": true,
 				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "please enter your identifier", 
-									"validationMessageTranslationID": ""
-								}
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "please enter your identifier",
+							"validationMessageTranslationID": ""
+						}
 					]
 				},
 				"order": 1,
@@ -452,30 +436,28 @@
 				"icon": "assignment",
 				"required": true,
 				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "Please select a document Type", 
-									"validationMessageTranslationID": ""
-								}
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "Please select a document Type",
+							"validationMessageTranslationID": ""
+						}
 					]
 				},
-				"targetFieldDomain": 
-				[
+				"targetFieldDomain": [
 					{
-						"name": "CIN", 
+						"name": "CIN",
 						"translationID": "identifier.uniqueIdType.CIN"
-					} , 
+					},
 					{
-						"name": "Passeport", 
+						"name": "Passeport",
 						"translationID": "identifier.uniqueIdType.Passeport"
-					}, 
+					},
 					{
-						"name": "RC", 
+						"name": "RC",
 						"translationID": "identifier.uniqueIdType.RC"
 					}
 				],
@@ -498,22 +480,26 @@
 				"icon": "wc",
 				"required": true,
 				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "Please enter your gender", 
-									"validationMessageTranslationID": ""
-								}
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "Please enter your gender",
+							"validationMessageTranslationID": ""
+						}
 					]
 				},
-				"targetFieldDomain": 
-				[
-					{"name": "Male", "translationID": "user.gender.male"}, 
-					{"name": "Female", "translationID": "user.gender.female"}
+				"targetFieldDomain": [
+					{
+						"name": "Male",
+						"translationID": "user.gender.male"
+					},
+					{
+						"name": "Female",
+						"translationID": "user.gender.female"
+					}
 				],
 				"order": 1,
 				"fieldGroup": {
@@ -533,8 +519,464 @@
 				"icon": "cake",
 				"required": true,
 				"validators": {
-					"syncValidators": 
-					[
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "Please enter an email adress",
+							"validationMessageTranslationID": "user.email.validation.required"
+						},
+						{
+							"validatorID": "birthDateValidator",
+							"validatorKey": "invalidBirthDate_under18",
+							"type": "GlobalCustomValidationService",
+							"nature": "sync",
+							"validationDefaultMessage": "This operation is not allowed for persons under the age of 18",
+							"validationMessageTranslationID": "user.birthdate.validation.birthDateValidator"
+						}
+					]
+				},
+				"order": 2,
+				"fieldGroup": {
+					"groupId": "4",
+					"groupOrder": 4
+				}
+			},
+			{
+				"entityFieldName": "city",
+				"visible": true,
+				"label": "City",
+				"labelTranslationID": "user.city",
+				"placeholder": "ex. Tunis",
+				"placeholderTranslationID": "user.city.placeholder",
+				"type": "string",
+				"icon": "location_city",
+				"required": false,
+				"order": 1,
+				"fieldGroup": {
+					"groupId": "5",
+					"groupLabel": "Location",
+					"groupLabelTranslationID": "user.group.otherinformation",
+					"groupOrder": 5
+				}
+			},
+			{
+				"entityFieldName": "address",
+				"visible": true,
+				"label": "Address",
+				"labelTranslationID": "user.address",
+				"placeholder": "ex. Southpark street n° 41 bis",
+				"placeholderTranslationID": "user.address.placeholder",
+				"type": "string",
+				"icon": "place",
+				"required": false,
+				"order": 2,
+				"fieldGroup": {
+					"groupId": "5",
+					"groupLabel": "Location",
+					"groupLabelTranslationID": "user.group.otherinformation",
+					"groupOrder": 5
+				}
+			},
+			{
+				"entityFieldName": "address2",
+				"visible": true,
+				"label": "Address 2",
+				"labelTranslationID": "user.address2",
+				"placeholder": "ex. Southpark street n° 41 bis",
+				"placeholderTranslationID": "user.address.placeholder",
+				"type": "string",
+				"icon": "place",
+				"required": false,
+				"order": 3,
+				"fieldGroup": {
+					"groupId": "5",
+					"groupLabel": "Location",
+					"groupLabelTranslationID": "user.group.otherinformation",
+					"groupOrder": 5
+				}
+			},
+			{
+				"entityFieldName": "fonction",
+				"visible": true,
+				"label": "Fonction",
+				"labelTranslationID": "user.fonction",
+				"placeholder": "ex. lawyer",
+				"placeholderTranslationID": "user.fonction.placeholder",
+				"type": "string",
+				"icon": "work",
+				"required": false,
+				"order": 1,
+				"fieldGroup": {
+					"groupId": "6",
+					"groupOrder": 6
+				}
+			},
+			{
+				"entityFieldName": "mobile",
+				"visible": true,
+				"label": "Mobile",
+				"labelTranslationID": "user.mobile",
+				"placeholder": "ex. 21697111222",
+				"placeholderTranslationID": "user.mobile.placeholder",
+				"type": "phone",
+				"icon": "phone_android",
+				"required": false,
+				"order": 1,
+				"fieldGroup": {
+					"groupId": "7",
+					"groupLabel": "Other Informations",
+					"groupLabelTranslationID": "user.group.otherinformation",
+					"groupOrder": 7
+				}
+			},
+			{
+				"entityFieldName": "telephone",
+				"visible": true,
+				"label": "Tel",
+				"labelTranslationID": "user.telephone",
+				"placeholder": "ex. 21671111222",
+				"placeholderTranslationID": "user.telephone.placeholder",
+				"type": "phone",
+				"icon": "local_phone",
+				"required": false,
+				"order": 2,
+				"fieldGroup": {
+					"groupId": "7",
+					"groupLabel": "Other Informations",
+					"groupLabelTranslationID": "user.group.otherinformation",
+					"groupOrder": 7
+				}
+			},
+			{
+				"entityFieldName": "about",
+				"visible": true,
+				"label": "About",
+				"labelTranslationID": "user.about",
+				"placeholder": "What describes you the most ?",
+				"placeholderTranslationID": "user.about",
+				"type": "textarea",
+				"icon": "assignment",
+				"required": false,
+				"order": 1,
+				"fieldGroup": {
+					"groupId": "9",
+					"groupOrder": 9
+				}
+			},
+			{
+				"entityFieldName": "createdBy",
+				"label": "createdBy",
+				"labelTranslationID": "user.createdBy",
+				"entityCompositeFieldName": "createdBy.userName",
+				"type": "composite",
+				"typeName": "User",
+				"visible": true,
+				"order": 3,
+				"fieldGroup": {
+					"groupId": "11",
+					"layout": "tab",
+					"groupLabel": "Creator",
+					"groupLabelTranslationID": "user.createdBy",
+					"groupOrder": 1
+				}
+			}
+		]
+	},
+	"createUCViewLayout": {
+		"orderedView": true,
+		"title": "Create User",
+		"titleTranslationID": "uc.create.user.title",
+		"parentEntityLabel": "User Details",
+		"parentEntityLabelTranslationId": "uc.create.user.label",
+		"iconOrientation": "SUFFIX",
+		"ucViewLayout": [
+			{
+				"entityFieldName": "userName",
+				"visible": true,
+				"label": "User Name",
+				"labelTranslationID": "user.userName",
+				"placeholder": "",
+				"placeholderTranslationID": "",
+				"type": "string",
+				"icon": "person",
+				"required": true,
+				"disabled": false,
+				"validators": {
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "Please enter a username",
+							"validationMessageTranslationID": ""
+						}
+					]
+				},
+				"defaultValue": "",
+				"order": 1,
+				"fieldGroup": {
+					"groupId": "1",
+					"groupOrder": 1
+				}
+			},
+			{
+				"entityFieldName": "email",
+				"visible": true,
+				"label": "Email",
+				"labelTranslationID": "user.email",
+				"placeholder": "ex. test@test.com",
+				"placeholderTranslationID": "user.email.placeholder",
+				"type": "string",
+				"icon": "email",
+				"required": true,
+				"validators": {
+					"syncValidators": [
+						{
+							"validatorID": "maxLength",
+							"validatorKey": "maxlength",
+							"parameters": [
+								30
+							],
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "email should be less than 30 characters!"
+						},
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "Please enter an email adress",
+							"validationMessageTranslationID": "user.email.validation.required"
+						},
+						{
+							"validatorID": "email",
+							"validatorKey": "email",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "Not a valid email",
+							"validationMessageTranslationID": "user.email.validation.email"
+						}
+					],
+					"asyncValidators": [
+						{
+							"validatorID": "emailAlreadyexistsValidator",
+							"validatorKey": "emailNotAvailable",
+							"type": "GlobalCustomValidationService",
+							"nature": "async",
+							"validationDefaultMessage": "email already exists",
+							"validationMessageTranslationID": "user.email.validation.emailNotAvailable"
+						}
+					],
+					"updateOn": "blur"
+				},
+				"defaultValue": "",
+				"order": 2,
+				"fieldGroup": {
+					"groupId": "1",
+					"groupOrder": 1
+				}
+			},
+			{
+				"entityFieldName": "password",
+				"visible": true,
+				"label": "password",
+				"labelTranslationID": "user.password",
+				"placeholder": "",
+				"placeholderTranslationID": "",
+				"type": "password",
+				"required": false,
+				"order": 3,
+				"fieldGroup": {
+					"groupId": "1",
+					"groupOrder": 1
+				}
+			},
+			{
+				"entityFieldName": "firstName",
+				"visible": true,
+				"label": "First Name",
+				"labelTranslationID": "user.firstName",
+				"placeholder": "ex. Houcem",
+				"placeholderTranslationID": "user.firstName.placeholder",
+				"type": "string",
+				"icon": "emoji_people",
+				"required": true,
+				"validators": {
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "a FirstName is required",
+							"validationMessageTranslationID": ""
+						}
+					]
+				},
+				"order": 1,
+				"fieldGroup": {
+					"groupId": "2",
+					"groupOrder": 2
+				}
+			},
+			{
+				"entityFieldName": "lastName",
+				"visible": true,
+				"label": "Last Name",
+				"labelTranslationID": "user.lastName",
+				"placeholder": "ex. LAOUITI",
+				"placeholderTranslationID": "user.lastName.placeholder",
+				"type": "string",
+				"icon": "emoji_people",
+				"required": true,
+				"validators": {
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "a last name is required",
+							"validationMessageTranslationID": ""
+						}
+					]
+				},
+				"order": 2,
+				"fieldGroup": {
+					"groupId": "2",
+					"groupOrder": 2
+				}
+			},
+			{
+				"entityFieldName": "identifier.uniqueID",
+				"visible": true,
+				"label": "Identifiant Unique",
+				"labelTranslationID": "user.identifier.uniqueID",
+				"placeholder": "",
+				"placeholderTranslationID": null,
+				"type": "string",
+				"icon": "assignment",
+				"required": true,
+				"validators": {
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "please enter your identifier",
+							"validationMessageTranslationID": ""
+						}
+					]
+				},
+				"order": 1,
+				"fieldGroup": {
+					"groupId": "3",
+					"groupLabel": "Identifier",
+					"groupLabelTranslationID": "user.group.identifier",
+					"groupOrder": 3
+				}
+			},
+			{
+				"entityFieldName": "identifier.uniqueIdType",
+				"visible": true,
+				"label": "Type",
+				"labelTranslationID": "user.identifier.uniqueIdType",
+				"placeholder": "",
+				"placeholderTranslationID": null,
+				"type": "combo",
+				"icon": "assignment",
+				"required": true,
+				"validators": {
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "Please select a document Type",
+							"validationMessageTranslationID": ""
+						}
+					]
+				},
+				"targetFieldDomain": [
+					{
+						"name": "CIN",
+						"translationID": "identifier.uniqueIdType.CIN"
+					},
+					{
+						"name": "Passeport",
+						"translationID": "identifier.uniqueIdType.Passeport"
+					},
+					{
+						"name": "RC",
+						"translationID": "identifier.uniqueIdType.RC"
+					}
+				],
+				"order": 2,
+				"fieldGroup": {
+					"groupId": "3",
+					"groupLabel": "Identifier",
+					"groupLabelTranslationID": "user.group.identifier",
+					"groupOrder": 3
+				}
+			},
+			{
+				"entityFieldName": "gender",
+				"visible": true,
+				"label": "Gender",
+				"labelTranslationID": "user.gender",
+				"placeholder": "",
+				"placeholderTranslationID": "user.gender.placeholder",
+				"type": "combo",
+				"icon": "wc",
+				"required": true,
+				"validators": {
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "Please enter your gender",
+							"validationMessageTranslationID": ""
+						}
+					]
+				},
+				"targetFieldDomain": [
+					{
+						"name": "Male",
+						"translationID": "user.gender.male"
+					},
+					{
+						"name": "Female",
+						"translationID": "user.gender.female"
+					}
+				],
+				"order": 1,
+				"fieldGroup": {
+					"groupId": "4",
+					"groupOrder": 4
+				}
+			},
+			{
+				"entityFieldName": "birthdate",
+				"visible": true,
+				"label": "Birth date",
+				"labelTranslationID": "user.birthdate",
+				"placeholder": "ex. 01/01/2001",
+				"placeholderTranslationID": "user.birthdate.placeholder",
+				"format": "dd-MM-yyyy HH:mm",
+				"type": "date",
+				"icon": "cake",
+				"required": true,
+				"validators": {
+					"syncValidators": [
 						{
 							"validatorID": "required",
 							"validatorKey": "required",
@@ -718,484 +1160,6 @@
 					"groupLabelTranslationID": "user.group.userRole",
 					"groupOrder": 1
 				}
-			},
-			{
-				"entityFieldName": "createdBy",
-				"label": "createdBy",
-				"labelTranslationID": "user.createdBy",
-				"entityCompositeFieldName": "createdBy.userName",
-				"type": "composite",
-				"typeName": "User",
-				"visible": true,
-				"order": 3,
-				"fieldGroup": {
-					"groupId": "11",
-					"layout": "tab",
-					"groupLabel": "Creator",
-					"groupLabelTranslationID": "user.createdBy",
-					"groupOrder": 1
-				}
-			}
-		]
-	},
-	"createUCViewLayout": {
-		"orderedView": true,
-		"title": "Create User",
-		"titleTranslationID": "uc.create.user.title",
-		"parentEntityLabel": "User Details",
-		"parentEntityLabelTranslationId": "uc.create.user.label",
-		"iconOrientation": "SUFFIX",
-		"ucViewLayout": [
-			{
-				"entityFieldName": "userName",
-				"visible": true,
-				"label": "User Name",
-				"labelTranslationID": "user.userName",
-				"placeholder": "",
-				"placeholderTranslationID": "",
-				"type": "string",
-				"icon": "person",
-				"required": true,
-				"disabled": false,
-				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "Please enter a username", 
-									"validationMessageTranslationID": ""
-								}
-					]
-				},
-				"defaultValue": "",
-				"order": 1,
-				"fieldGroup": {
-					"groupId": "1",
-					"groupOrder": 1
-				}
-			},
-			{
-				"entityFieldName": "email",
-				"visible": true,
-				"label": "Email",
-				"labelTranslationID": "user.email",
-				"placeholder": "ex. test@test.com",
-				"placeholderTranslationID": "user.email.placeholder",
-				"type": "string",
-				"icon": "email",
-				"required": true,
-				"validators": {
-					"syncValidators": 
-					[
-						{
-							"validatorID":"maxLength", 
-							"validatorKey": "maxlength",
-							"parameters": [30], 
-							"type": "Validators", 
-							"nature": "sync",
-							"validationDefaultMessage": "email should be less than 30 characters!"
-						}, 
-						{
-							"validatorID":"required", 
-							"validatorKey": "required", 
-							"type": "Validators", 
-							"nature": "sync",
-							"validationDefaultMessage": "Please enter an email adress", 
-							"validationMessageTranslationID": "user.email.validation.required"
-						}, 
-						{
-							"validatorID":"email", 
-							"validatorKey": "email", 
-							"type": "Validators", 
-							"nature": "sync",
-							"validationDefaultMessage": "Not a valid email", 
-							"validationMessageTranslationID": "user.email.validation.email"
-						}
-					],
-					"asyncValidators": 
-					[
-						{
-							"validatorID":"emailAlreadyexistsValidator", 
-							"validatorKey": "emailNotAvailable", 
-							"type": "GlobalCustomValidationService", 
-							"nature": "async",
-							"validationDefaultMessage": "email already exists", 
-							"validationMessageTranslationID": "user.email.validation.emailNotAvailable"
-						}
-					],
-					"updateOn": "blur"
-				},
-				"defaultValue": "",
-				"order": 2,
-				"fieldGroup": {
-					"groupId": "1",
-					"groupOrder": 1
-				}
-			},
-			{
-				"entityFieldName": "password",
-				"visible": true,
-				"label": "password",
-				"labelTranslationID": "user.password",
-				"placeholder": "",
-				"placeholderTranslationID": "",
-				"type": "password",
-				"required": false,
-				"order": 3,
-				"fieldGroup": {
-					"groupId": "1",
-					"groupOrder": 1
-				}
-			},
-			{
-				"entityFieldName": "firstName",
-				"visible": true,
-				"label": "First Name",
-				"labelTranslationID": "user.firstName",
-				"placeholder": "ex. Houcem",
-				"placeholderTranslationID": "user.firstName.placeholder",
-				"type": "string",
-				"icon": "emoji_people",
-				"required": true,
-				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "a FirstName is required", 
-									"validationMessageTranslationID": ""
-								}
-					]
-				},
-				"order": 1,
-				"fieldGroup": {
-					"groupId": "2",
-					"groupOrder": 2
-				}
-			},
-			{
-				"entityFieldName": "lastName",
-				"visible": true,
-				"label": "Last Name",
-				"labelTranslationID": "user.lastName",
-				"placeholder": "ex. LAOUITI",
-				"placeholderTranslationID": "user.lastName.placeholder",
-				"type": "string",
-				"icon": "emoji_people",
-				"required": true,
-				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "a last name is required", 
-									"validationMessageTranslationID": ""
-								}
-					]
-				},
-				"order": 2,
-				"fieldGroup": {
-					"groupId": "2",
-					"groupOrder": 2
-				}
-			},
-			{
-				"entityFieldName": "identifier.uniqueID",
-				"visible": true,
-				"label": "Identifiant Unique",
-				"labelTranslationID": "user.identifier.uniqueID",
-				"placeholder": "",
-				"placeholderTranslationID": null,
-				"type": "string",
-				"icon": "assignment",
-				"required": true,
-				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "please enter your identifier", 
-									"validationMessageTranslationID": ""
-								}
-					]
-				},
-				"order": 1,
-				"fieldGroup": {
-					"groupId": "3",
-					"groupLabel": "Identifier",
-					"groupLabelTranslationID": "user.group.identifier",
-					"groupOrder": 3
-				}
-			},
-			{
-				"entityFieldName": "identifier.uniqueIdType",
-				"visible": true,
-				"label": "Type",
-				"labelTranslationID": "user.identifier.uniqueIdType",
-				"placeholder": "",
-				"placeholderTranslationID": null,
-				"type": "combo",
-				"icon": "assignment",
-				"required": true,
-				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "Please select a document Type", 
-									"validationMessageTranslationID": ""
-								}
-					]
-				},
-				"targetFieldDomain": 
-				[
-					{
-						"name": "CIN", 
-						"translationID": "identifier.uniqueIdType.CIN"
-					} , 
-					{
-						"name": "Passeport", 
-						"translationID": "identifier.uniqueIdType.Passeport"
-					}, 
-					{
-						"name": "RC", 
-						"translationID": "identifier.uniqueIdType.RC"
-					}
-				],
-				"order": 2,
-				"fieldGroup": {
-					"groupId": "3",
-					"groupLabel": "Identifier",
-					"groupLabelTranslationID": "user.group.identifier",
-					"groupOrder": 3
-				}
-			},
-			{
-				"entityFieldName": "gender",
-				"visible": true,
-				"label": "Gender",
-				"labelTranslationID": "user.gender",
-				"placeholder": "",
-				"placeholderTranslationID": "user.gender.placeholder",
-				"type": "combo",
-				"icon": "wc",
-				"required": true,
-				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "Please enter your gender", 
-									"validationMessageTranslationID": ""
-								}
-					]
-				},
-				"targetFieldDomain": 
-				[
-					{"name": "Male", "translationID": "user.gender.male"}, 
-					{"name": "Female", "translationID": "user.gender.female"}
-				],
-				"order": 1,
-				"fieldGroup": {
-					"groupId": "4",
-					"groupOrder": 4
-				}
-			},
-			{
-				"entityFieldName": "birthdate",
-				"visible": true,
-				"label": "Birth date",
-				"labelTranslationID": "user.birthdate",
-				"placeholder": "ex. 01/01/2001",
-				"placeholderTranslationID": "user.birthdate.placeholder",
-				"format": "dd-MM-yyyy HH:mm",
-				"type": "date",
-				"icon": "cake",
-				"required": true,
-				"validators": {
-					"syncValidators": 
-					[
-						{
-							"validatorID": "required",
-							"validatorKey": "required",
-							"type": "Validators",
-							"nature": "sync",
-							"validationDefaultMessage": "Please enter an email adress",
-							"validationMessageTranslationID": "user.email.validation.required"
-						},
-						{
-							"validatorID": "birthDateValidator",
-							"validatorKey": "invalidBirthDate_under18",
-							"type": "GlobalCustomValidationService",
-							"nature": "sync",
-							"validationDefaultMessage": "This operation is not allowed for persons under the age of 18",
-							"validationMessageTranslationID": "user.birthdate.validation.birthDateValidator"
-						}
-					]
-				},
-				"order": 2,
-				"fieldGroup": {
-					"groupId": "4",
-					"groupOrder": 4
-				}
-			},
-			{
-				"entityFieldName": "city",
-				"visible": true,
-				"label": "City",
-				"labelTranslationID": "user.city",
-				"placeholder": "ex. Tunis",
-				"placeholderTranslationID": "user.city.placeholder",
-				"type": "string",
-				"icon": "location_city",
-				"required": false,
-				"order": 1,
-				"fieldGroup": {
-					"groupId": "5",
-					"groupLabel": "Location",
-					"groupLabelTranslationID": "user.group.otherinformation",
-					"groupOrder": 5
-				}
-			},
-			{
-				"entityFieldName": "address",
-				"visible": true,
-				"label": "Address",
-				"labelTranslationID": "user.address",
-				"placeholder": "ex. Southpark street n° 41 bis",
-				"placeholderTranslationID": "user.address.placeholder",
-				"type": "string",
-				"icon": "place",
-				"required": false,
-				"order": 2,
-				"fieldGroup": {
-					"groupId": "5",
-					"groupLabel": "Location",
-					"groupLabelTranslationID": "user.group.otherinformation",
-					"groupOrder": 5
-				}
-			},
-			{
-				"entityFieldName": "address2",
-				"visible": true,
-				"label": "Address 2",
-				"labelTranslationID": "user.address2",
-				"placeholder": "ex. Southpark street n° 41 bis",
-				"placeholderTranslationID": "user.address.placeholder",
-				"type": "string",
-				"icon": "place",
-				"required": false,
-				"order": 3,
-				"fieldGroup": {
-					"groupId": "5",
-					"groupLabel": "Location",
-					"groupLabelTranslationID": "user.group.otherinformation",
-					"groupOrder": 5
-				}
-			},
-			{
-				"entityFieldName": "fonction",
-				"visible": true,
-				"label": "Fonction",
-				"labelTranslationID": "user.fonction",
-				"placeholder": "ex. lawyer",
-				"placeholderTranslationID": "user.fonction.placeholder",
-				"type": "string",
-				"icon": "work",
-				"required": false,
-				"order": 1,
-				"fieldGroup": {
-					"groupId": "6",
-					"groupOrder": 6
-				}
-			},
-			{
-				"entityFieldName": "mobile",
-				"visible": true,
-				"label": "Mobile",
-				"labelTranslationID": "user.mobile",
-				"placeholder": "ex. 21697111222",
-				"placeholderTranslationID": "user.mobile.placeholder",
-				"type": "phone",
-				"icon": "phone_android",
-				"required": false,
-				"order": 1,
-				"fieldGroup": {
-					"groupId": "7",
-					"groupLabel": "Other Informations",
-					"groupLabelTranslationID": "user.group.otherinformation",
-					"groupOrder": 7
-				}
-			},
-			{
-				"entityFieldName": "telephone",
-				"visible": true,
-				"label": "Tel",
-				"labelTranslationID": "user.telephone",
-				"placeholder": "ex. 21671111222",
-				"placeholderTranslationID": "user.telephone.placeholder",
-				"type": "phone",
-				"icon": "local_phone",
-				"required": false,
-				"order": 2,
-				"fieldGroup": {
-					"groupId": "7",
-					"groupLabel": "Other Informations",
-					"groupLabelTranslationID": "user.group.otherinformation",
-					"groupOrder": 7
-				}
-			},
-			{
-				"entityFieldName": "role",
-				"visible": false,
-				"label": "Role",
-				"labelTranslationID": "user.role",
-				"placeholder": "",
-				"placeholderTranslationID": null,
-				"type": "string",
-				"icon": "groups",
-				"required": false,
-				"order": 1,
-				"fieldGroup": {
-					"groupId": "8",
-					"groupLabel": "User Role",
-					"groupLabelTranslationID": "user.group.userRole",
-					"groupOrder": 8
-				}
-			},
-			{
-				"entityFieldName": "about",
-				"visible": true,
-				"label": "About",
-				"labelTranslationID": "user.about",
-				"placeholder": "What describes you the most ?",
-				"placeholderTranslationID": "user.about",
-				"type": "textarea",
-				"icon": "assignment",
-				"required": false,
-				"order": 1,
-				"fieldGroup": {
-					"groupId": "9",
-					"groupOrder": 9
-				}
 			}
 		]
 	},
@@ -1219,16 +1183,15 @@
 				"required": true,
 				"disabled": true,
 				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "Please enter a username", 
-									"validationMessageTranslationID": ""
-								}
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "Please enter a username",
+							"validationMessageTranslationID": ""
+						}
 					]
 				},
 				"defaultValue": "",
@@ -1267,16 +1230,15 @@
 				"icon": "emoji_people",
 				"required": true,
 				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "a FirstName is required", 
-									"validationMessageTranslationID": ""
-								}
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "a FirstName is required",
+							"validationMessageTranslationID": ""
+						}
 					]
 				},
 				"order": 1,
@@ -1296,16 +1258,15 @@
 				"icon": "emoji_people",
 				"required": true,
 				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "a last name is required", 
-									"validationMessageTranslationID": ""
-								}
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "a last name is required",
+							"validationMessageTranslationID": ""
+						}
 					]
 				},
 				"order": 2,
@@ -1325,16 +1286,15 @@
 				"icon": "assignment",
 				"required": true,
 				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "please enter your identifier", 
-									"validationMessageTranslationID": ""
-								}
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "please enter your identifier",
+							"validationMessageTranslationID": ""
+						}
 					]
 				},
 				"order": 1,
@@ -1356,30 +1316,28 @@
 				"icon": "assignment",
 				"required": true,
 				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "Please select a document Type", 
-									"validationMessageTranslationID": ""
-								}
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "Please select a document Type",
+							"validationMessageTranslationID": ""
+						}
 					]
 				},
-				"targetFieldDomain": 
-				[
+				"targetFieldDomain": [
 					{
-						"name": "CIN", 
+						"name": "CIN",
 						"translationID": "identifier.uniqueIdType.CIN"
-					} , 
+					},
 					{
-						"name": "Passeport", 
+						"name": "Passeport",
 						"translationID": "identifier.uniqueIdType.Passeport"
-					}, 
+					},
 					{
-						"name": "RC", 
+						"name": "RC",
 						"translationID": "identifier.uniqueIdType.RC"
 					}
 				],
@@ -1402,22 +1360,26 @@
 				"icon": "wc",
 				"required": true,
 				"validators": {
-					"syncValidators": 
-					[
-								{
-									"validatorID":"required", 
-									"validatorKey": "required", 
-									"type": "Validators", 
-									"nature": "sync",
-									"validationDefaultMessage": "Please enter your gender", 
-									"validationMessageTranslationID": ""
-								}
+					"syncValidators": [
+						{
+							"validatorID": "required",
+							"validatorKey": "required",
+							"type": "Validators",
+							"nature": "sync",
+							"validationDefaultMessage": "Please enter your gender",
+							"validationMessageTranslationID": ""
+						}
 					]
 				},
-				"targetFieldDomain": 
-				[
-					{"name": "Male", "translationID": "user.gender.male"}, 
-					{"name": "Female", "translationID": "user.gender.female"}
+				"targetFieldDomain": [
+					{
+						"name": "Male",
+						"translationID": "user.gender.male"
+					},
+					{
+						"name": "Female",
+						"translationID": "user.gender.female"
+					}
 				],
 				"order": 1,
 				"fieldGroup": {
@@ -1437,8 +1399,7 @@
 				"icon": "cake",
 				"required": true,
 				"validators": {
-					"syncValidators": 
-					[
+					"syncValidators": [
 						{
 							"validatorID": "required",
 							"validatorKey": "required",
@@ -1567,24 +1528,6 @@
 					"groupLabel": "Other Informations",
 					"groupLabelTranslationID": "user.group.otherinformation",
 					"groupOrder": 7
-				}
-			},
-			{
-				"entityFieldName": "role",
-				"visible": false,
-				"label": "Role",
-				"labelTranslationID": "user.role",
-				"placeholder": "",
-				"placeholderTranslationID": null,
-				"type": "string",
-				"icon": "groups",
-				"required": false,
-				"order": 1,
-				"fieldGroup": {
-					"groupId": "8",
-					"groupLabel": "User Role",
-					"groupLabelTranslationID": "user.group.userRole",
-					"groupOrder": 8
 				}
 			},
 			{

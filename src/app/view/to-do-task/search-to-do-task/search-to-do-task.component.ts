@@ -1,24 +1,29 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ActivatedRoute, NavigationExtras, Params, Router } from '@angular/router';
-import { AlertService, AverosDialogViewConfig, AverosDynamicDialogComponent, AverosSearchEntityComponent, AverosViewConfig, FormControlService, SearchInputCriteria, SearchUseCase, TypeScriptTypeMetaDatatHandler, UseCase, UseCaseConfig, User, ViewLayoutService } from '@wiforge/averos';
+import { SearchInputCriteria, AlertService, FormControlService, ViewLayoutService,
+         TypeScriptTypeMetaDatatHandler, AverosDynamicDialogComponent, AverosSearchEntityComponent, 
+         UseCase, SearchUseCase, UseCaseConfig, AverosDialogViewConfig, AverosViewConfig, User
+        } from '@wiforge/averos';
 import { Observable, of, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ToDoTask } from '../../../model/to-do-task';
 import { ToDoTaskService } from '../../../service/to-do-task.service';
+import { ToDoArea } from '../../../model/to-do-area';
+
 
 @Component({
-  selector: 'app-search-to-do-task',
-  templateUrl: './search-to-do-task.component.html',
-  styleUrls: ['./search-to-do-task.component.scss']
+	selector: 'app-search-to-do-task-component',
+	templateUrl: './search-to-do-task.component.html',
+	styleUrls: ['./search-to-do-task.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchToDoTaskComponent implements SearchUseCase<ToDoTask>, OnInit, OnDestroy {
 
-  @ViewChild(AverosSearchEntityComponent, {static: true}) averosSearchEntity: AverosSearchEntityComponent<ToDoTask>;
-
-
- targetEntity =  ToDoTask.instanceMetadata;
+@ViewChild(AverosSearchEntityComponent, {static: true}) averosSearchEntity!: AverosSearchEntityComponent<ToDoTask>;
+  
+  targetEntity =  ToDoTask.instanceMetadata;
  viewLayout = ToDoTask.getEntityViewLayout();
  searchInputFormGoup: FormGroup;// = this.buildForm();
 
@@ -27,13 +32,13 @@ export class SearchToDoTaskComponent implements SearchUseCase<ToDoTask>, OnInit,
                                                   componentAppearance: 'outline',
                                                   iconLayout: 'component',
                                                   entityType: ToDoTask,
-                                                  entity: null
+                                                  entity: undefined
                                                 };
   showSearchResult = false;
-  searchCriteria: SearchInputCriteria;
-  tableValues$: Observable<ToDoTask[]> ;
-  private  genericDialog = new MatDialogConfig();
-  private  deleteSubscription: Subscription;
+  searchCriteria!: SearchInputCriteria;
+  tableValues$!: Observable<ToDoTask[]> ;
+  private genericDialog = new MatDialogConfig();
+  private deleteSubscription!: Subscription;
 
 
   /**
@@ -50,12 +55,11 @@ export class SearchToDoTaskComponent implements SearchUseCase<ToDoTask>, OnInit,
 
     } else if (avConfig.useCaseConfig?.useCase===UseCase.EDIT ||
                 avConfig.useCaseConfig?.useCase===UseCase.UPDATE ){
-     return this.entityService.updateEntity(avConfig.useCaseConfig.entity?.id, objectSubjectToAction)
+     return this.entityService.updateEntity(avConfig.value[TypeScriptTypeMetaDatatHandler.instance.getIdName(this.targetEntity)], objectSubjectToAction);
     }
-    return null;
+    return of();
     
   }
-
   constructor(private entityService: ToDoTaskService,
               private formControlService: FormControlService,
               private alertService: AlertService,
@@ -67,6 +71,7 @@ export class SearchToDoTaskComponent implements SearchUseCase<ToDoTask>, OnInit,
                }
 
   ngOnDestroy(): void {
+
     this.deleteSubscription?.unsubscribe();
   }
   
@@ -80,10 +85,8 @@ export class SearchToDoTaskComponent implements SearchUseCase<ToDoTask>, OnInit,
         usecase: UseCase.EDIT,
       }
     };
-    this.router.navigate(['/todotask/edit', entity[TypeScriptTypeMetaDatatHandler.instance.getIdName(this.targetEntity)]], navigationExtras);
+    this.router.navigate(['/todotasks/edit', entity[TypeScriptTypeMetaDatatHandler.instance.getIdName(this.targetEntity)]], navigationExtras);
   }
-
-
   delete(valueToBeDeleted: ToDoTask) {
     const idName = TypeScriptTypeMetaDatatHandler.instance.getIdName(this.targetEntity);
         this.deleteSubscription = this.entityService.deleteEntity((valueToBeDeleted as any)[idName])
@@ -91,8 +94,7 @@ export class SearchToDoTaskComponent implements SearchUseCase<ToDoTask>, OnInit,
               (deletedEntity: ToDoTask) => {
                 this.alertService.success($localize`:@@uc.delete.entity:Entity ${valueToBeDeleted.name}:entity:
                 has been deleted successfully`);
-                // eslint-disable-next-line no-underscore-dangle
-                this.tableValues$ = this.tableValues$.pipe(map(e=>e.filter(el => (el as any)[idName] !== (valueToBeDeleted as any)[idName])));
+                this.tableValues$ = this.tableValues$.pipe(map(e=>e.filter(el=> (el as any)[idName] !== (valueToBeDeleted as any)[idName])));
                 this.deleteSubscription?.unsubscribe();
               },
               err => {
@@ -100,7 +102,6 @@ export class SearchToDoTaskComponent implements SearchUseCase<ToDoTask>, OnInit,
                 this.deleteSubscription?.unsubscribe();
         });;
   }
-
   reloadData(t: any) {
     this.tableValues$ = this.entityService.getAllEntities();
   }
@@ -115,10 +116,11 @@ export class SearchToDoTaskComponent implements SearchUseCase<ToDoTask>, OnInit,
                               objectClass: ToDoTask, 
                               compositeObject: {value: ToDoTask.instanceMetadata, type: 'ToDoTask'},
                               onSubmitCallback: this.onAddOrUpateCallback,
-                              onLoadCallback: null,
+                              onLoadCallback: undefined,
                               viewLayout : { 
                                             useCase: UseCase.CREATE,
-                                            editMode: true
+                                            editMode: true,
+                                            canActivateEditMode: true
                                           }
                             };
 
@@ -134,9 +136,13 @@ export class SearchToDoTaskComponent implements SearchUseCase<ToDoTask>, OnInit,
         usecase: UseCase.VIEW,
       }
     };
-    this.router.navigate(['/todotask/view/', entity[TypeScriptTypeMetaDatatHandler.instance.getIdName(this.targetEntity)]], navigationExtras);
+    this.router.navigate(['/todotasks/view/', entity[TypeScriptTypeMetaDatatHandler.instance.getIdName(this.targetEntity)]], navigationExtras);
   }
 
+/**
+* This function handles a one-to-one and one-to-many relationships in a view composite relation use case
+* Please do not modify or update the function structure since it's is auto-updated when including additional entity members
+*/
   viewCompositeObject(compositeObject: { value: unknown; type: string; compositeType?: string; }) {
     let averosDialogViewConfig: AverosDialogViewConfig =
     
@@ -144,29 +150,28 @@ export class SearchToDoTaskComponent implements SearchUseCase<ToDoTask>, OnInit,
                                   objectClass: null, ////example User (type not string)
                                   compositeObject: compositeObject,
                                   onSubmitCallback: (a: any,b: any)=>{},
-                                  onLoadCallback:  null,
-                                  viewLayout : { useCase: null,
+                                  onLoadCallback:  undefined,
+                                  viewLayout : { useCase: -1,
                                                  editMode: false,
                                                  canActivateEditMode: false
                                                }
         };
 
-    if (compositeObject?.compositeType === 'collection'){
-          if (compositeObject.type === 'ToDoTask'){// composite of type Collection (list of assigned ToDoTasks)
-            averosDialogViewConfig.objectClass= ToDoTask;    
-            averosDialogViewConfig.viewLayout.useCase = UseCase.SEARCH_RESULT_TABLE;    
-            averosDialogViewConfig.onLoadCallback = (entities: any[]): Observable<any> => of(entities);                
-          }
+    if (compositeObject?.compositeType === 'collection'){ /// handles One-To-Many relationship if any
+
     }
     else {
       averosDialogViewConfig.viewLayout.useCase = UseCase.VIEW;
-      if (compositeObject.type === 'User'){// User Entity
-        averosDialogViewConfig.objectClass = User;
-        // averosDialogViewConfig.onSubmitCallback = this.onSubmitUserCallback;
-        // averosDialogViewConfig.onLoadCallback = this.onLoadUserCallback;
+      if (compositeObject.type === 'User'){// User Entity this is an Averos type but it could be overriden at your convenience
+        averosDialogViewConfig.objectClass= User;
 
       }
+    
+      if (compositeObject.type === 'ToDoArea'){
+      averosDialogViewConfig.objectClass= ToDoArea;
     }
+      
+}
 
     const viewConfig = this.viewLayoutService.buildAverosDialogViewConfig(averosDialogViewConfig);
     this.genericDialog.data = viewConfig;
