@@ -447,20 +447,26 @@
 						}
 					]
 				},
-				"targetFieldDomain": [
-					{
-						"name": "CIN",
-						"translationID": "identifier.uniqueIdType.CIN"
-					},
-					{
-						"name": "Passeport",
-						"translationID": "identifier.uniqueIdType.Passeport"
-					},
-					{
-						"name": "RC",
-						"translationID": "identifier.uniqueIdType.RC"
-					}
-				],
+				"targetFieldDomain": 
+				{ 
+					"defaultDomain": [
+										{
+											"key": "CIN",
+											"value": "CIN",
+											"translationID": ""
+										},
+										{
+											"key": "Passeport",
+											"value": "Passeport",
+											"translationID": ""
+										},
+										{
+											"key": "RC",
+											"value": "RC",
+											"translationID": ""
+										}
+				  					]
+				},
 				"order": 2,
 				"fieldGroup": {
 					"groupId": "3",
@@ -491,16 +497,23 @@
 						}
 					]
 				},
-				"targetFieldDomain": [
-					{
-						"name": "Male",
-						"translationID": "user.gender.male"
-					},
-					{
-						"name": "Female",
-						"translationID": "user.gender.female"
-					}
-				],
+				"targetFieldDomain":
+				{
+					"defaultDomain":
+								[
+									{
+										"key": "Male",
+										"value": "Male",
+										"translationID": "user.gender.male"
+									},
+									{
+										"key": "Female",
+										"value": "Female",
+										"translationID": "user.gender.female"
+									}
+								]
+							
+				},
 				"order": 1,
 				"fieldGroup": {
 					"groupId": "4",
@@ -904,20 +917,27 @@
 						}
 					]
 				},
-				"targetFieldDomain": [
-					{
-						"name": "CIN",
-						"translationID": "identifier.uniqueIdType.CIN"
-					},
-					{
-						"name": "Passeport",
-						"translationID": "identifier.uniqueIdType.Passeport"
-					},
-					{
-						"name": "RC",
-						"translationID": "identifier.uniqueIdType.RC"
-					}
-				],
+				"targetFieldDomain": 
+				{ 
+					"defaultDomain": [
+										{
+											"key": "CIN",
+											"value": "CIN",
+											"translationID": ""
+										},
+										{
+											"key": "Passeport",
+											"value": "Passeport",
+											"translationID": ""
+										},
+										{
+											"key": "RC",
+											"value": "RC",
+											"translationID": ""
+										}
+				  					]
+				}
+				,
 				"order": 2,
 				"fieldGroup": {
 					"groupId": "3",
@@ -948,16 +968,23 @@
 						}
 					]
 				},
-				"targetFieldDomain": [
-					{
-						"name": "Male",
-						"translationID": "user.gender.male"
-					},
-					{
-						"name": "Female",
-						"translationID": "user.gender.female"
-					}
-				],
+				"targetFieldDomain": 
+				{
+					"defaultDomain":
+								[
+									{
+										"key": "Male",
+										"value": "Male",
+										"translationID": "user.gender.male"
+									},
+									{
+										"key": "Female",
+										"value": "Female",
+										"translationID": "user.gender.female"
+									}
+								]
+							
+				},
 				"order": 1,
 				"fieldGroup": {
 					"groupId": "4",
@@ -1327,20 +1354,26 @@
 						}
 					]
 				},
-				"targetFieldDomain": [
-					{
-						"name": "CIN",
-						"translationID": "identifier.uniqueIdType.CIN"
-					},
-					{
-						"name": "Passeport",
-						"translationID": "identifier.uniqueIdType.Passeport"
-					},
-					{
-						"name": "RC",
-						"translationID": "identifier.uniqueIdType.RC"
-					}
-				],
+				"targetFieldDomain": 
+				{ 
+					"defaultDomain": [
+										{
+											"key": "CIN",
+											"value": "CIN",
+											"translationID": ""
+										},
+										{
+											"key": "Passeport",
+											"value": "Passeport",
+											"translationID": ""
+										},
+										{
+											"key": "RC",
+											"value": "RC",
+											"translationID": ""
+										}
+				  					]
+				},
 				"order": 2,
 				"fieldGroup": {
 					"groupId": "3",
@@ -1371,16 +1404,23 @@
 						}
 					]
 				},
-				"targetFieldDomain": [
-					{
-						"name": "Male",
-						"translationID": "user.gender.male"
-					},
-					{
-						"name": "Female",
-						"translationID": "user.gender.female"
-					}
-				],
+				"targetFieldDomain": 
+				{
+					"defaultDomain":
+								[
+									{
+										"key": "Male",
+										"value": "Male",
+										"translationID": "user.gender.male"
+									},
+									{
+										"key": "Female",
+										"value": "Female",
+										"translationID": "user.gender.female"
+									}
+								]
+							
+				},
 				"order": 1,
 				"fieldGroup": {
 					"groupId": "4",

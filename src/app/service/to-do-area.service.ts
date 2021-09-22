@@ -65,7 +65,7 @@ export class ToDoAreaService {
       return of();
   }
 
-  getEntitiesByCriteria(criteria: SearchInputCriteria): Observable<any>{
+  getEntitiesByCriteria(criteria: SearchInputCriteria, inline: boolean = false): Observable<any>{
 
     let query: string;
 
@@ -75,7 +75,10 @@ export class ToDoAreaService {
 
     query = criteria.toHttpQuery('REGULAR');
     const opts =  {
-                    params: new HttpParams({fromString: query})
+                    params: new HttpParams({fromString: query}),
+                    headers: {
+                      'inline-loading': `${inline}`
+                    }
                    };
     return this.httpClient.get<any[]>(this.toDoAreaAPI, opts);
   }
