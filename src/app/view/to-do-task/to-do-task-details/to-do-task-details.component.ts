@@ -47,7 +47,7 @@ export class ToDoTaskDetailsComponent implements CreateViewEditUseCase<ToDoTask>
               private cd: ChangeDetectorRef) {
 
     const navigation = this.router.getCurrentNavigation();
-    this.currentUseCase = navigation?.extras.state?.usecase ? navigation.extras.state?.usecase : UseCase.VIEW;
+    this.currentUseCase = navigation?.extras.state?.['usecase'] ? navigation.extras.state?.['usecase'] : UseCase.VIEW;
 
     if (this.currentUseCase === UseCase.EDIT || 
         this.currentUseCase === UseCase.CREATE || 
@@ -76,8 +76,8 @@ export class ToDoTaskDetailsComponent implements CreateViewEditUseCase<ToDoTask>
   onSubmit(submittedValue: ToDoTask) {
     // handles updates in case of EDIT use case
     if (this.currentUseCase === UseCase.EDIT || this.currentUseCase === UseCase.UPDATE){
-       this.updateEntitySubscription = this.entityService.updateEntity(this.useCaseConfig.entity?.id, submittedValue).subscribe(
-        (updatedEntity: ToDoTask) => {
+       this.updateEntitySubscription = this.entityService.updateEntity(this.useCaseConfig.entity?.id, submittedValue).subscribe({
+        next: (updatedEntity: ToDoTask) => {
           this.alertService.success($localize`:@@uc.update.entity:Entity ${updatedEntity.name}:entity:
            has been updated successfully`);
           
@@ -85,13 +85,13 @@ export class ToDoTaskDetailsComponent implements CreateViewEditUseCase<ToDoTask>
           this.updateView(UseCase.VIEW, updatedEntity);
           this.updateEntitySubscription?.unsubscribe();
         },
-        err => {
+        error: err => {
           console.log(err);
           this.updateEntitySubscription?.unsubscribe();
-        });
+        }});
     } else if (this.currentUseCase === UseCase.CREATE){
-      this.createEntitySubscription = this.entityService.createEntity(submittedValue).subscribe(
-        (createdEntity: ToDoTask) => {
+      this.createEntitySubscription = this.entityService.createEntity(submittedValue).subscribe({
+        next: (createdEntity: ToDoTask) => {
           this.alertService.success($localize`:@@uc.create.entity:Entity ${createdEntity.name}:entity:
            has been created successfully`);
           this.editModeActivated = false;
@@ -99,10 +99,10 @@ export class ToDoTaskDetailsComponent implements CreateViewEditUseCase<ToDoTask>
           this.createEntitySubscription?.unsubscribe();
          
         },
-        err => {
+        error: err => {
           console.log(err);
           this.createEntitySubscription?.unsubscribe();
-        });
+        }});
     }
 
   }
@@ -119,36 +119,36 @@ export class ToDoTaskDetailsComponent implements CreateViewEditUseCase<ToDoTask>
         case UseCaseAction.DELETE:
               this.deleteRelationSubscription = this.entityService.deleteRelationCollection((this.useCaseEntity as any)[idName], 
                 entityAlteredRelationEventData.actionEventData.relationName,
-                entityAlteredRelationEventData.actionEventData.formattedIdsSubjectToAction).subscribe(
-                  (updates: any) => {
+                entityAlteredRelationEventData.actionEventData.formattedIdsSubjectToAction).subscribe({
+                  next: (updates: any) => {
                     this.alertService.success($localize`:@@uc.update.entity:Entity ${this.useCaseEntity.name}:entity:
                       has been updated successfully`); 
                     this.deleteRelationSubscription?.unsubscribe();                                                     
                   },
-                  err => {
+                  error: err => {
                     console.log(err);
                     this.alertService.error($localize`:@@uc.update.entity.error:Entity ${this.useCaseEntity.name}:entity:
                       cannot be updated`); 
                     this.deleteRelationSubscription?.unsubscribe();                                                    
                   }
-                );
+                });
           break;
         case UseCaseAction.ADD:
               this.addRelationSubscription = this.entityService.addRelationCollection((this.useCaseEntity as any)[idName], 
                 entityAlteredRelationEventData.actionEventData.relationName,
-                entityAlteredRelationEventData.actionEventData.formattedIdsSubjectToAction).subscribe(
-                  (updates: any) => {
+                entityAlteredRelationEventData.actionEventData.formattedIdsSubjectToAction).subscribe({
+                  next: (updates: any) => {
                     this.alertService.success($localize`:@@uc.update.entity:Entity ${this.useCaseEntity.name}:entity:
                       has been updated successfully`);        
                     this.addRelationSubscription?.unsubscribe();                                              
                   },
-                  err => {
+                  error: err => {
                     console.log(err);
                     this.alertService.error($localize`:@@uc.update.entity.error:Entity ${this.useCaseEntity.name}:entity:
                       cannot be updated`);  
                     this.addRelationSubscription?.unsubscribe();                                                    
                   }
-                );
+                });
             
           break;
         default:

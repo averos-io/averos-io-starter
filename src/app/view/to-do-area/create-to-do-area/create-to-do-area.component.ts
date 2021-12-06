@@ -67,37 +67,36 @@ useCaseViewLayout!: Observable<UseCaseViewLayout<ToDoArea>>;
         case UseCaseAction.DELETE:
           this.deleteRelationSubscription = this.entityService.deleteRelationCollection((this.useCaseConfig.entity as any)[idName], 
                 entityAlteredRelationEventData.actionEventData.relationName,
-                entityAlteredRelationEventData.actionEventData.formattedIdsSubjectToAction).subscribe(
-                  (updates: any) => {
+                entityAlteredRelationEventData.actionEventData.formattedIdsSubjectToAction).subscribe({
+                  next: (updates: any) => {
                     this.alertService.success($localize`:@@uc.update.entity:Entity ${this.useCaseConfig.entity?.name}:entity:
                       has been updated successfully`); 
                     this.deleteRelationSubscription?.unsubscribe();                                                    
                   },
-                  err => {
+                  error: err => {
                     console.log(err);
                     this.alertService.error($localize`:@@uc.update.entity.error:Entity ${this.useCaseConfig.entity?.name}:entity:
                       cannot be updated`);
                     this.deleteRelationSubscription?.unsubscribe();                                                    
                   }
-                );
+                });
           break;
         case UseCaseAction.ADD:
           this.addRelationSubscription = this.entityService.addRelationCollection((this.useCaseConfig.entity as any)[idName], 
                 entityAlteredRelationEventData.actionEventData.relationName,
-                entityAlteredRelationEventData.actionEventData.formattedIdsSubjectToAction).subscribe(
-                  (updates: any) => {
+                entityAlteredRelationEventData.actionEventData.formattedIdsSubjectToAction).subscribe({
+                 next: (updates: any) => {
                     this.alertService.success($localize`:@@uc.update.entity:Entity ${this.useCaseConfig.entity?.name}:entity:
                       has been updated successfully`);     
                     this.addRelationSubscription?.unsubscribe();                                                 
                   },
-                  err => {
+                  error: err => {
                     console.log(err);
                     this.alertService.error($localize`:@@uc.update.entity.error:Entity ${this.useCaseConfig.entity?.name}:entity:
                       cannot be updated`);     
                       this.addRelationSubscription?.unsubscribe();                                                
                   }
-                );
-            
+                });
           break;
         default:
           break;
@@ -132,8 +131,8 @@ useCaseViewLayout!: Observable<UseCaseViewLayout<ToDoArea>>;
   onSubmit(submittedValue: ToDoArea){
     this.componentNewValue = submittedValue;
     if (this.useCaseConfig.useCase === UseCase.CREATE){
-      this.createEntitySubscription = this.entityService.createEntity(this.componentNewValue).subscribe(
-        (submittedEntity: ToDoArea) => {
+      this.createEntitySubscription = this.entityService.createEntity(this.componentNewValue).subscribe({
+        next: (submittedEntity: ToDoArea) => {
           this.alertService.success($localize`:@@uc.create.entity:Entity ${submittedEntity.name}:entity:
            has been created successfully`);
           this.editModeActivated = false;
@@ -143,14 +142,14 @@ useCaseViewLayout!: Observable<UseCaseViewLayout<ToDoArea>>;
           
           this.createEntitySubscription?.unsubscribe();
         },
-        err => {
+        error: err => {
           console.log(err); 
           this.createEntitySubscription?.unsubscribe();
-        }); 
+        }}); 
     } else if (this.useCaseConfig.useCase === UseCase.EDIT){
         this.updateEntitySubscription = this.entityService.updateEntity(((this.useCaseConfig.entity) as any)[TypeScriptTypeMetaDatatHandler
-                  .instance.getIdName(this.useCaseConfig.entityType)],this.componentNewValue).subscribe(
-          (submittedEntity: ToDoArea) => {
+                  .instance.getIdName(this.useCaseConfig.entityType)],this.componentNewValue).subscribe({
+          next: (submittedEntity: ToDoArea) => {
             this.alertService.success($localize`:@@uc.update.entity:Entity ${submittedEntity.name}:entity:
             has been updated successfully`);
             this.editModeActivated = false;
@@ -160,10 +159,10 @@ useCaseViewLayout!: Observable<UseCaseViewLayout<ToDoArea>>;
             
             this.updateEntitySubscription?.unsubscribe();
           },
-          err => {
+          error: err => {
             console.log(err); 
             this.updateEntitySubscription?.unsubscribe();
-          }); 
+          }}); 
     }
   }
 

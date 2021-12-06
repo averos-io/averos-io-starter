@@ -10,8 +10,8 @@ Averos framework web application starter
 <br/> 
 <br/>
 
-  <img src="https://img.shields.io/badge/AverosIOStarter-v1.1.2-blue">
-    <img src="https://img.shields.io/badge/poweredby-averos-red">
+  <img src="https://img.shields.io/badge/AverosIOStarter-v1.1.3-blue">
+    <img src="https://img.shields.io/badge/poweredby-averos v1.3.0 / angular 13-red">
 </p>
 
 <br/>

@@ -90,17 +90,17 @@ export class SearchToDoAreaComponent implements SearchUseCase<ToDoArea>, OnInit,
   delete(valueToBeDeleted: ToDoArea) {
     const idName = TypeScriptTypeMetaDatatHandler.instance.getIdName(this.targetEntity);
         this.deleteSubscription = this.entityService.deleteEntity((valueToBeDeleted as any)[idName])
-            .subscribe(
-              (deletedEntity: ToDoArea) => {
+            .subscribe({
+              next: (deletedEntity: ToDoArea) => {
                 this.alertService.success($localize`:@@uc.delete.entity:Entity ${valueToBeDeleted.name}:entity:
                 has been deleted successfully`);
                 this.tableValues$ = this.tableValues$.pipe(map(e=>e.filter(el=> (el as any)[idName] !== (valueToBeDeleted as any)[idName])));
                 this.deleteSubscription?.unsubscribe();
               },
-              err => {
+              error: err => {
                 console.log(err);
                 this.deleteSubscription?.unsubscribe();
-        });;
+        }});
   }
   reloadData(t: any) {
     this.tableValues$ = this.entityService.getAllEntities();

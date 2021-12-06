@@ -25,7 +25,7 @@ import { SearchToDoTaskComponent } from './view/to-do-task/search-to-do-task/sea
     SearchToDoTaskComponent
   ],
   imports: [
-    AverosCoreModule.forRoot({ beURL: 'http://localhost:3333', supportedLanguages: ['en'] }),
+    AverosCoreModule.forRoot({ beURL: 'http://localhost:3002', supportedLanguages: ['en'] }),
 BrowserModule,
     AppRoutingModule, 
 BrowserAnimationsModule, 
