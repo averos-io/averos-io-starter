@@ -10,8 +10,8 @@ Averos framework web application starter
 <br/> 
 <br/>
 
-  <img src="https://img.shields.io/badge/AverosIOStarter-v1.1.3-blue">
-    <img src="https://img.shields.io/badge/poweredby-averos v1.3.0 / angular 13-red">
+  <img src="https://img.shields.io/badge/AverosIOStarter-v1.1.4-blue">
+    <img src="https://img.shields.io/badge/poweredby-averos v1.4.0 / angular 13.2.2-red">
 </p>
 
 <br/>
@@ -36,7 +36,17 @@ Averos framework web application starter
 
 Please refer to [averos starter user guide](https://www.wiforge.com/) for further details.
 
+# The NEW Averos Designer
 
+Averos is now embracing LowCode / NoCode in order to streamline application development and get closer to citizenship development.
+
+We have put in place a designer that is intented to help developers designing their requirements in a very intuitive way and then generate their applications based on their own design.
+Creating application could thus be achieved in three steps:
+   #### 1- Design
+   #### 2- Generate
+   #### 3- Download & Run
+
+Please register here [averos designer](http://averos.wiforge.com/) for further details.
 
 
 

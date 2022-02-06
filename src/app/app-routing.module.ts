@@ -17,7 +17,7 @@ import { ToDoTaskDetailsComponent } from './view/to-do-task/to-do-task-details/t
             { path: '', redirectTo: 'public', pathMatch: 'full' },
             { path: 'login', component: LoginComponent },
             { path: 'register', component: RegisterComponent },
-            { path: 'dashboard', component: UserDashboardComponent },
+            { path: 'home', component: UserDashboardComponent },
             { path: 'public', loadChildren: () => import ('@wiforge/averos').then(module => module.PublicSpaceModule),
                           canActivate: [UnauthenticatedSpaceGuard]},
             { path: 'users', loadChildren: () => import ('@wiforge/averos').then(module => module.UsersModule),
